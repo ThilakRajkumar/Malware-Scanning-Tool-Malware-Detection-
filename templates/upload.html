@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload File</h1>
+
+        <!-- File Upload Form -->
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" name="file" id="file-upload" required>
+                <button type="submit">Scan File</button>
+            </div>
+        </form>
+
+        <!-- Error Handling (if needed) -->
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        
+        <a class="back-link" href="/">Back to Home</a>
+    </div>
+</body>
+</html>
